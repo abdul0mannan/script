@@ -155,7 +155,7 @@ async function callShopifyGraphQL(query, variables = {}) {
 
 const PRODUCT_BY_HANDLE_QUERY = `
   query getProductByHandle($handle: String!) {
-    productByHandle(handle: $handle) {
+    productByIdentifier(identifier: { handle: $handle }) {
       id
       handle
       title
@@ -176,7 +176,7 @@ const PRODUCT_BY_HANDLE_QUERY = `
 async function fetchProductByHandle(handle) {
   const data = await callShopifyGraphQL(PRODUCT_BY_HANDLE_QUERY, { handle });
 
-  const product = data?.data?.productByHandle || null;
+  const product = data?.data?.productByIdentifier || null;
   if (product) {
     info(`Found existing product for handle "${handle}" (id: ${product.id}).`);
   } else {
