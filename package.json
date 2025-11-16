@@ -1,0 +1,20 @@
+{
+  "name": "shopify-task2",
+  "version": "1.0.0",
+  "description": "CLI tool to sync products from Excel to Shopify via Admin GraphQL API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+     "dev":"node src/index.js --help"
+  },
+  "keywords": ["shopify", "cli", "excel", "GraphQL"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "xlsx": "^0.18.5",
+    "yargs": "^18.0.0"
+  }
+}
